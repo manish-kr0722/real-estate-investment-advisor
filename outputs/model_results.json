@@ -1,0 +1,151 @@
+{
+  "xgboost": false,
+  "mlflow": false,
+  "runs": [
+    {
+      "task": "classification",
+      "model": "LogisticRegression",
+      "params": {
+        "model": "LogisticRegression",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "accuracy": 0.897,
+        "precision": 0.8238,
+        "recall": 0.7983,
+        "f1": 0.8108,
+        "roc_auc": 0.962
+      },
+      "train_seconds": 0.9
+    },
+    {
+      "task": "classification",
+      "model": "RandomForest",
+      "params": {
+        "model": "RandomForest",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "accuracy": 0.9641,
+        "precision": 0.9465,
+        "recall": 0.9222,
+        "f1": 0.9342,
+        "roc_auc": 0.9935
+      },
+      "train_seconds": 5.6
+    },
+    {
+      "task": "classification",
+      "model": "HistGradientBoosting",
+      "params": {
+        "model": "HistGradientBoosting",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "accuracy": 0.9924,
+        "precision": 0.9864,
+        "recall": 0.986,
+        "f1": 0.9862,
+        "roc_auc": 0.9995
+      },
+      "train_seconds": 14.2
+    },
+    {
+      "task": "regression",
+      "model": "Ridge",
+      "params": {
+        "model": "Ridge",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "rmse": 7.5323,
+        "mae": 5.555,
+        "r2": 0.9986,
+        "mape_pct": 4.0075
+      },
+      "train_seconds": 0.5
+    },
+    {
+      "task": "regression",
+      "model": "RandomForest",
+      "params": {
+        "model": "RandomForest",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "rmse": 4.5431,
+        "mae": 3.2763,
+        "r2": 0.9995,
+        "mape_pct": 1.0029
+      },
+      "train_seconds": 42.2
+    },
+    {
+      "task": "regression",
+      "model": "HistGradientBoosting",
+      "params": {
+        "model": "HistGradientBoosting",
+        "n_features": 26,
+        "test_size": 0.2
+      },
+      "metrics": {
+        "rmse": 1.1096,
+        "mae": 0.8917,
+        "r2": 1.0,
+        "mape_pct": 0.4448
+      },
+      "train_seconds": 16.4
+    }
+  ],
+  "best_classifier": "HistGradientBoosting",
+  "best_regressor": "HistGradientBoosting",
+  "confusion_matrix": [
+    [
+      35980,
+      188
+    ],
+    [
+      193,
+      13639
+    ]
+  ],
+  "importance": {
+    "clf": {
+      "Price_per_SqFt_Rs": 0.49183,
+      "Under_Construction": 0.26931,
+      "Year_Built": 0.14489,
+      "Transport_Score": 0.13764,
+      "Nearby_Schools": 0.08091,
+      "Amenity_Count": 0.07429,
+      "Nearby_Hospitals": 0.07419,
+      "Parking_Flag": 0.04052,
+      "Security_Flag": 0.03841,
+      "Age_of_Property": 0.028,
+      "City": 0.00104,
+      "Size_per_BHK": 0.00081
+    },
+    "reg": {
+      "Price_in_Lakhs": 281.14719,
+      "Under_Construction": 12.43728,
+      "Transport_Score": 7.17617,
+      "Year_Built": 6.32384,
+      "Nearby_Schools": 3.64167,
+      "Nearby_Hospitals": 3.61228,
+      "Amenity_Count": 3.55955,
+      "Age_of_Property": 2.26017,
+      "Parking_Flag": 2.12705,
+      "Security_Flag": 2.10759,
+      "Price_per_BHK": 0.09818,
+      "Price_per_SqFt_Rs": 0.00519
+    }
+  },
+  "majority_baseline_accuracy": 0.7234,
+  "mean_future_price": 359.04010308000005,
+  "n_train": 200000,
+  "n_test": 50000
+}
